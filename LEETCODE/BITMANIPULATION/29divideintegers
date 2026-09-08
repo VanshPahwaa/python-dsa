@@ -1,0 +1,22 @@
+
+def divide(dividend, divisor):
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
+
+        quotient=0
+        while(dividend>divisor):
+            temp=1
+            oldtemp=0
+            while(temp*divisor<dividend):
+                oldtemp=temp
+                temp=temp<<1
+                
+            dividend=dividend-oldtemp*divisor
+            quotient=quotient|oldtemp
+        return quotient
+        
+        
+print(divide(10,3))
